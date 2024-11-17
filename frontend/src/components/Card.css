@@ -1,0 +1,68 @@
+:root{
+  --blue:#69ABCE;
+  --red:#DE6961;
+  --yellow:#ffd966;
+  --green:#97B247;
+}
+.flip-card {
+    background-color: transparent;
+    width: 200px;
+    height: 300px;
+    border: 1px solid #f1f1f1;
+    overflow: hidden;
+    
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1.5s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    /*background-color: #bbb;*/
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    /*background-color: dodgerblue;*/
+    color: white;
+    transform: rotateY(180deg);
+  }
+  .card-content{
+    font-weight:600;
+    font-size: 1.2rem;
+    word-break: break-all;
+  }
+.material-symbols-outlined{
+  position: absolute;
+  top:10px;
+  right:10px;
+  cursor: pointer;
+}
